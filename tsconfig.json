@@ -1,24 +1,17 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": true,
-    "lib": ["es2018", "dom"],
-    "jsx": "react",
+    "target": "es2020",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
     "esModuleInterop": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "strict": true,
-    "typeRoots": ["./typings.d.ts", "node_modules/@types"]
-  },
-  "exclude": [
-    "node_modules",
-    "**/**/__stories__/*",
-    "./typings.d.ts",
-    "./.storybook/*"
-  ]
+    "strictNullChecks": true,
+    "skipLibCheck": true
+  }
 }

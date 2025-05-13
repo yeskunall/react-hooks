@@ -1,54 +1,45 @@
 {
-  "name": "root",
-  "private": true,
+  "name": "@yeskunall/react-hooks",
+  "version": "0.0.0",
+  "description": "A set of React hooks to get hooked on",
+  "homepage": "https://github.com/yeskunall/react-hooks#readme",
+  "bugs": {
+    "url": "https://github.com/yeskunall/react-hooks#issues"
+  },
+  "repository": "yeskunall/react-hooks",
+  "license": "MIT",
+  "author": {
+    "name": "Kunall Banerjee",
+    "email": "hey@kunall.dev",
+    "url": "https://kunall.dev"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./dist/hooks/index.mjs"
+  },
+  "types": "./dist/hooks/index.d.mts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build:storybook": "build-storybook -c .storybook -o .storybook-output",
-    "deploy:storybook": "now ./storybook-static",
-    "lint": "tslint -c tslint.json -p tsconfig.json",
-    "storybook": "start-storybook -p 2121 -c .storybook",
-    "tslint-check": "tslint-config-prettier-check ./tslint.json"
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@storybook/addon-info": "^4.0.2",
-    "@storybook/addon-knobs": "^4.0.2",
-    "@storybook/addon-options": "^4.0.2",
-    "@storybook/components": "^4.0.2",
-    "@storybook/react": "^4.0.0",
-    "@types/node": "^11.11.1",
-    "@types/react": "^16.8.7",
-    "@types/storybook__react": "^3.0.9",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.0.4",
-    "cz-conventional-changelog": "^2.1.0",
-    "husky": "^1.1.3",
-    "lerna": "^3.4.3",
-    "lint-staged": "^8.0.4",
-    "prettier": "^1.14.3",
-    "prop-types": "^15.6.2",
-    "react": "^16.7.0-alpha.0",
-    "react-dom": "^16.7.0-alpha.0",
-    "storybook-readme": "^4.0.1",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.15.0",
-    "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.1.4"
+    "@antfu/eslint-config": "4.13.0",
+    "@types/react": "19.1.4",
+    "@types/react-dom": "19.1.5",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "typescript": "5.8.3",
+    "unbuild": "3.5.0"
   },
-  "dependencies": {},
-  "lint-staged": {
-    "*.{ts,tsx,yml}": [
-      "prettier --write --config .prettierrc",
-      "git add"
-    ]
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+  "packageManager": "pnpm@9.15.6"
 }
