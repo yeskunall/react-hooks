@@ -11,6 +11,7 @@
 ## All hooks
 
 - [`useBoolean`](./hooks/use-boolean/index.ts)
+- [`useClickAnywhere`](./hooks/use-click-anywhere/index.ts)
 - [`useCounter`](./hooks/use-counter/index.ts)
 
 ---
