@@ -8,6 +8,12 @@
 - Fully typed with [TSDoc](https://tsdoc.org/)
 - **Zero dependencies**
 
+## All hooks
+
+- [`useBoolean`](./hooks/use-boolean/index.ts)
+
+---
+
 #### ⚖️ License
 
 [MIT](https://github.com/yeskunall/react-hooks/blob/main/license) © [Kunall Banerjee](https://kunall.dev/?ref=react-hooks)
