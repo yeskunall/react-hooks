@@ -1,0 +1,17 @@
+*
+
+!.github/
+!.github/**
+!hooks/
+!hooks/**
+!.editorconfig
+!.gitignore
+!.npmrc
+!build.config.ts
+!eslint.config.ts
+!license
+!package.json
+!pnpm-lock.yaml
+!readme.md
+!tsconfig.json
+!vitest.config.ts

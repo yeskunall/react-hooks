@@ -1,0 +1,60 @@
+{
+  "name": "@yeskunall/react-hooks",
+  "version": "0.0.0",
+  "description": "A set of React hooks to get hooked on",
+  "homepage": "https://github.com/yeskunall/react-hooks#readme",
+  "bugs": {
+    "url": "https://github.com/yeskunall/react-hooks#issues"
+  },
+  "repository": "yeskunall/react-hooks",
+  "license": "MIT",
+  "author": {
+    "name": "Kunall Banerjee",
+    "email": "hey@kunall.dev",
+    "url": "https://kunall.dev"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./dist/hooks/index.mjs"
+  },
+  "types": "./dist/hooks/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint --max-warnings 0 .",
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "5.2.2",
+    "@eslint/js": "9.35.0",
+    "@stylistic/eslint-plugin": "5.3.1",
+    "@testing-library/dom": "10.4.1",
+    "@testing-library/react": "16.3.0",
+    "@types/react": "19.1.12",
+    "@types/react-dom": "19.1.9",
+    "@vitejs/plugin-react": "5.0.2",
+    "eslint": "9.35.0",
+    "eslint-import-resolver-typescript": "4.4.4",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "globals": "16.3.0",
+    "jsdom": "26.1.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.42.0",
+    "unbuild": "3.6.1",
+    "vitest": "3.2.4"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "packageManager": "pnpm@9.15.6"
+}
