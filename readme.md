@@ -16,6 +16,7 @@
 - [`useCycle`](./hooks/use-cycle/index.ts)
 - [`useDebounce`](./hooks/use-debounce/index.ts)
 - [`useDefault`](./hooks/use-default/index.ts)
+- [`useInputControl`](./hooks/use-input-control/index.ts)
 
 ---
 
