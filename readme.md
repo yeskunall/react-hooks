@@ -8,7 +8,7 @@
 - Fully typed with [TSDoc](https://tsdoc.org/)
 - **Zero dependencies**
 
-## All hooks
+## 🎣 All hooks
 
 - [`useBoolean`](./hooks/use-boolean/index.ts)
 - [`useClickAnywhere`](./hooks/use-click-anywhere/index.ts)
