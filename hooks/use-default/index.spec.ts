@@ -29,17 +29,23 @@ suite("useDefault", () => {
     })
 
     test("integration", () => {
-      const { result } = renderHook(() => useDefault(true))
+      const { result } = renderHook(() => useDefault("Anonymous"))
+
+      expect(result.current[0]).toBe("Anonymous")
+      act(() => {
+        result.current[1]("Alice")
+      })
+      expect(result.current[0]).toBe("Alice")
 
       act(() => {
-        result.current[1](false)
+        result.current[1]("Bob")
       })
-      expect(result.current[0]).toBe(false)
+      expect(result.current[0]).toBe("Bob")
 
       act(() => {
-        result.current[1](true)
+        result.current[1](null)
       })
-      expect(result.current[0]).toBe(true)
+      expect(result.current[0]).toBe("Anonymous")
     })
   })
 })
