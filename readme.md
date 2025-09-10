@@ -15,6 +15,7 @@
 - [`useCounter`](./hooks/use-counter/index.ts)
 - [`useCycle`](./hooks/use-cycle/index.ts)
 - [`useDebounce`](./hooks/use-debounce/index.ts)
+- [`useDefault`](./hooks/use-default/index.ts)
 
 ---
 
