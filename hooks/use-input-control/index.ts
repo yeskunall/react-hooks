@@ -92,6 +92,6 @@ export function useInputControl(
       handleChange,
       reset,
     }),
-    [dirty, dirty, touched, value, handleBlur, handleChange, reset],
+    [different, dirty, touched, value, handleBlur, handleChange, reset],
   )
 }
