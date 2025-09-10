@@ -19,8 +19,10 @@ jobs:
           - 20
     steps:
       - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda
       - uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm test
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
