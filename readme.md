@@ -17,6 +17,7 @@
 - [`useDebounce`](./hooks/use-debounce/index.ts)
 - [`useDefault`](./hooks/use-default/index.ts)
 - [`useInputControl`](./hooks/use-input-control/index.ts)
+- [`useTimeout`](./hooks/use-timeout/index.ts)
 
 ---
 
