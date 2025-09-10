@@ -9,7 +9,7 @@ type UseBooleanReturn = {
 /**
  * Manage a boolean state, with additional convenience utility methods.
  *
- * @param `initialValue` - Initial value of the boolean state. If not provided, it defaults ot `false`.
+ * @param `initialValue` - Initial value of the boolean state. If not provided, it defaults to `false`.
  * @returns An object containing:
  * - `value`: The current boolean state
  * - `setFalse`: A function to set the boolean state to `false`
