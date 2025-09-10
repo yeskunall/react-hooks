@@ -38,6 +38,7 @@ export default defineConfig(
       importPlugin.flatConfigs.recommended,
       js.configs.recommended,
       react.configs.flat["jsx-runtime"],
+      reactHooks.configs["recommended-latest"],
       ...tseslint.configs.recommended,
     ],
     files: ["**/*.{ts,tsx}"],
@@ -55,7 +56,6 @@ export default defineConfig(
     },
     plugins: {
       react,
-      "react-hooks": reactHooks,
       "@stylistic": stylistic,
     },
     rules: {
