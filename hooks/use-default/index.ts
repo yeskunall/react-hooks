@@ -3,7 +3,7 @@ import { useCallback, useMemo, useState } from "react"
 import type { Dispatch, SetStateAction } from "react"
 
 /**
- * Manage state but automatically falls back to a default value the state is `null` or `undefined`.
+ * Manage state but automatically fallback to a default value when the state is `null` or `undefined`.
  *
  * @typeParam T - Type of the state value.
  *
