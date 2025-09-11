@@ -77,7 +77,7 @@ export function useInputControl(
   const reset = useCallback(() => {
     setDirty(DEFAULT_DIRTY_STATE)
     setTouched(DEFAULT_TOUCHED_STATE)
-    setValue(initialValue)
+    setValue(ref.current)
   }, [])
 
   const different = ref.current !== value
