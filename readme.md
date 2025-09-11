@@ -18,6 +18,7 @@
 - [`useDefault`](./hooks/use-default/index.ts)
 - [`useInputControl`](./hooks/use-input-control/index.ts)
 - [`useMediaQuery`](./hooks/use-media-query/index.ts)
+- [`useSet`](./hooks/use-set/index.ts)
 - [`useTimeout`](./hooks/use-timeout/index.ts)
 
 ---
