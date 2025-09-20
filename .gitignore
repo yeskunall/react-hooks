@@ -2,6 +2,8 @@
 
 !.github/
 !.github/**
+!apps/
+!apps/**
 !hooks/
 !hooks/**
 !.editorconfig
@@ -16,3 +18,8 @@
 !readme.md
 !tsconfig.json
 !vitest.config.ts
+
+**/node_modules/**
+.next
+next-env.d.ts
+.source
