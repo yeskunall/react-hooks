@@ -12,6 +12,7 @@
 !license
 !package.json
 !pnpm-lock.yaml
+!pnpm-workspace.yaml
 !readme.md
 !tsconfig.json
 !vitest.config.ts
