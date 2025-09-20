@@ -2,6 +2,8 @@
 
 !.github/
 !.github/**
+!apps/
+!apps/**
 !hooks/
 !hooks/**
 !.editorconfig
@@ -12,6 +14,12 @@
 !license
 !package.json
 !pnpm-lock.yaml
+!pnpm-workspace.yaml
 !readme.md
 !tsconfig.json
 !vitest.config.ts
+
+**/node_modules/**
+.next
+next-env.d.ts
+.source

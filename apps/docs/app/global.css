@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+
+/* https://tailwindcss.com/docs/detecting-classes-in-source-files#explicitly-registering-sources */
+@source "../node_modules/fumadocs-ui/dist";
