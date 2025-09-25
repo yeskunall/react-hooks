@@ -16,10 +16,13 @@
 !pnpm-lock.yaml
 !pnpm-workspace.yaml
 !readme.md
+!registry.json
+!registry/
+!registry/**
 !tsconfig.json
 !vitest.config.ts
 
 **/node_modules/**
 .next
-next-env.d.ts
 .source
+next-env.d.ts

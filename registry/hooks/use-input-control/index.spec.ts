@@ -199,6 +199,27 @@ suite("useInputControl", () => {
     expect(result.current.touched).toBe(false)
   })
 
+  test("reset uses the latest initialValue if it changes", () => {
+    const { rerender, result } = renderHook(
+      ({ initialValue }) => useInputControl(initialValue),
+      { initialProps: { initialValue: "initial value" } },
+    )
+
+    act(() => {
+      result.current.handleChange({
+        target: { value: "changed" },
+        currentTarget: { value: "changed" },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } as any)
+    })
+
+    rerender({ initialValue: "updated initial" })
+    act(() => {
+      result.current.reset()
+    })
+    expect(result.current.value).toBe("initial value")
+  })
+
   test("integration", async () => {
     const initialValue = "initial value"
     const { result } = renderHook(() => useInputControl(initialValue))
