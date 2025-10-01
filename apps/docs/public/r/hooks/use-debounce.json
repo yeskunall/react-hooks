@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-debounce",
+  "type": "registry:hook",
+  "files": [
+    {
+      "path": "registry/hooks/use-debounce/index.ts",
+      "content": "import { useEffect, useState } from \"react\"\n\n/**\n * Delay state updates until a specified `delay` has passed without any further changes to the provided `value`.\n *\n * @typeParam T - Type of the input value being debounced.\n *\n * @param value - Input value to debounce.\n * @param delay - Debounce delay in milliseconds.\n * @returns Debounced value.\n *\n * @example\n * ```tsx\n * import { useDebounce } from \"@yeskunall/react-hooks\";\n *\n * function SearchInput() {\n *   const [query, setQuery] = useState(\"\");\n *   const debouncedQuery = useDebounce(query, 500);\n *\n *   useEffect(() => {\n *     if (debouncedQuery) {\n *       // Trigger API request with debounced query\n *       fetch(`/api/search?q=${debouncedQuery}`);\n *     }\n *   }, [debouncedQuery]);\n *\n *   return (\n *     <input\n *       value={query}\n *       onChange={(e) => setQuery(e.target.value)}\n *       placeholder=\"Type to search...\"\n *     />\n *   );\n * }\n * ```\n */\nexport function useDebounce<T>(value: T, delay: number) {\n  const [debounced, setDebounced] = useState<T>(value)\n\n  useEffect(() => {\n    const id = setTimeout(() => {\n      setDebounced(value)\n    }, delay)\n\n    return () => clearTimeout(id)\n  }, [delay, value])\n\n  return debounced\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

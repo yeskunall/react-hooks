@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-cycle",
+  "type": "registry:hook",
+  "files": [
+    {
+      "path": "registry/hooks/use-cycle/index.ts",
+      "content": "import { useState } from \"react\"\n\n/**\n * Cycle through a sequence of values each time a function is called.\n *\n * @param values - A non-empty array of values to cycle through.\n * @returns A tuple containing the following:\n * - The current value\n * - A function that changes the current value to the next one in the sequence, or the first one if the current value is the last in the sequence.\n *\n * @example\n * ```tsx\n * import { useCycle } from \"@yeskunall/react-hooks\";\n *\n * function ThemeSwitcher() {\n *   const { value: theme, cycle } = useCycle(\"light\", \"dark\", \"system\");\n *\n *   return (\n *     <div>\n *       <p>Current theme: {theme}</p>\n *       <button onClick={cycle}>Switch Theme</button>\n *     </div>\n *   );\n * }\n * ```\n */\nexport function useCycle<T>(...args: T[]) {\n  const [index, setIndex] = useState(0)\n  const value = args[index]\n\n  const cycle = () => {\n    setIndex(previous => (previous + 1) % args.length)\n  }\n\n  return [value, cycle] as const\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

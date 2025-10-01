@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-default",
+  "type": "registry:hook",
+  "files": [
+    {
+      "path": "registry/hooks/use-default/index.ts",
+      "content": "import { useCallback, useMemo, useState } from \"react\"\n\nimport type { Dispatch, SetStateAction } from \"react\"\n\n/**\n * Manage state but automatically fallback to a default value when the state is `null` or `undefined`.\n *\n * @typeParam T - Type of the state value.\n *\n * @param defaultValue - Default value to use when `initialValue` is `null` or `undefined`.\n * @param initialValue - Initial state.\n * @returns A tuple containing the resolved `value` and a setter function to update the state.\n *\n * @example\n * ```tsx\n * function Profile({ user }: { user?: string | null }) {\n *   const { value: name, set: setName } = useDefault(\"Anonymous\", user);\n *\n *   return (\n *     <div>\n *       <p>Hello, {name}!</p>\n *       <button onClick={() => setName(null)}>Reset</button>\n *     </div>\n *   );\n * }\n * ```\n */\nexport function useDefault<T>(defaultValue: T, initialValue?: T | (() => T | null | undefined) | null | undefined) {\n  const [value, setValue] = useState<T | null | undefined>(initialValue ?? defaultValue)\n\n  const memoizedValue = useMemo<T>(() => {\n    if (value === null || typeof value === \"undefined\") return defaultValue\n\n    return value\n  }, [defaultValue, value])\n  const memoizedSetValue = useCallback<Dispatch<SetStateAction<T | null | undefined>>>(value => setValue(value), [])\n\n  return [memoizedValue, memoizedSetValue] as const\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-boolean",
+  "type": "registry:hook",
+  "files": [
+    {
+      "path": "registry/hooks/use-boolean/index.ts",
+      "content": "import { useCallback, useMemo, useState } from \"react\"\n\ntype UseBooleanReturn = {\n  value: boolean\n  setTrue: () => void\n  setFalse: () => void\n}\n\n/**\n * Manage a boolean state, with additional convenience utility methods.\n *\n * @param `initialValue` - Initial value of the boolean state. If not provided, it defaults to `false`.\n * @returns An object containing:\n * - `value`: The current boolean state\n * - `setFalse`: A function to set the boolean state to `false`\n * - `setTrue`: A function to set the boolean state to `true`\n *\n * @example\n * ```tsx\n * import { useBoolean } from \"@yeskunall/react-hooks\";\n *\n * function ModalDemo() {\n *   const { value: isOpen, setFalse: close, setTrue: open } = useBoolean(false);\n *\n *   return (\n *     <div>\n *       <button onClick={open}>Open Modal</button>\n *\n *       {isOpen && (\n *         <div className=\"modal\">\n *           <p>This is a modal!</p>\n *           <button onClick={close}>Close</button>\n *         </div>\n *       )}\n *     </div>\n *   );\n * }\n * ```\n */\nexport function useBoolean(initialValue: boolean = false): UseBooleanReturn {\n  const [value, setValue] = useState<boolean>(initialValue)\n\n  const setFalse = useCallback(() => setValue(false), [])\n  const setTrue = useCallback(() => setValue(true), [])\n\n  return useMemo<UseBooleanReturn>(\n    () => ({\n      setFalse,\n      setTrue,\n      value,\n    }),\n    [setFalse, setTrue, value],\n  )\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-click-anywhere",
+  "type": "registry:hook",
+  "files": [
+    {
+      "path": "registry/hooks/use-click-anywhere/index.ts",
+      "content": "import { useEffect } from \"react\"\n\n/**\n * A React hook that handles click events anywhere on the window.\n *\n * @param handler - The function to be called when a click event is detected anywhere on the window.\n *\n * @example\n * ```tsx\n * import { useClickAnywhere } from \"@yeskunall/react-hooks\"\n *\n * function Component() {\n *   useClickAnywhere((event) => {\n *     console.log(\"User interaction:\", event.type, event.target);\n *   });\n *\n *   return <button>Click or tap me (or anywhere else)</button>;\n * }\n * ```\n */\nexport function useClickAnywhere(handler: (event: MouseEvent) => void) {\n  useEffect(() => {\n    window.addEventListener(\"click\", handler)\n\n    return () => window.removeEventListener(\"click\", handler)\n  }, [handler])\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

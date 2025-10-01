@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-media-query",
+  "type": "registry:hook",
+  "files": [
+    {
+      "path": "registry/hooks/use-media-query/index.ts",
+      "content": "import { useCallback, useSyncExternalStore } from \"react\"\n\n/**\n * Subscribe and respond to media query changes.\n *\n * @param `query` - Media query to match. It must be a [valid CSS media query string](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)\n * @returns Boolean indicating whether the media query currently matches\n *\n * @example\n * ```tsx\n * function Component() {\n *   const isMobile = useMediaQuery(\"(max-width: 768px)\")\n *\n *   return (\n *     <div>\n *       {isMobile ? \"Viewing on mobile\" : \"Viewing on desktop\"}\n *     </div>\n *   )\n * }\n * ```\n *\n * @example\n * ```tsx\n * function DarkModeIndicator() {\n *   const prefersDark = useMediaQuery(\"(prefers-color-scheme: dark)\")\n *\n *   return (\n *     <span>{prefersDark ? \"Dark mode\" : \"Light mode\"}</span>\n *   )\n * }\n * ```\n */\nexport function useMediaQuery(query: string): boolean {\n  const subscribe = useCallback((callback: () => void) => {\n    const match = window.matchMedia(query)\n\n    match.addEventListener(\"change\", callback)\n\n    return () => match.removeEventListener(\"change\", callback)\n  }, [query])\n\n  const getSnapshot = () => {\n    return window.matchMedia(query).matches\n  }\n\n  const getServerSnapshot = () => {\n    throw Error(\"useMatchMedia is a client-only hook\")\n  }\n\n  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

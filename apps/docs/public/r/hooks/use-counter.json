@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-counter",
+  "type": "registry:hook",
+  "files": [
+    {
+      "path": "registry/hooks/use-counter/index.ts",
+      "content": "import { useCallback, useMemo, useState } from \"react\"\n\nimport type { Dispatch, SetStateAction } from \"react\"\n\ninterface UseCounterReturn {\n  count: number\n  decrement: (delta?: number) => void\n  increment: (delta?: number) => void\n  reset: () => void\n  set: Dispatch<SetStateAction<number>>\n}\n\n/**\n * Manage a numeric counter with convenient utility methods.\n *\n * @param `initialValue` - Initial value of the counter state. If not provided, it defaults to 0.\n * @returns An object with the current count and helper methods to update it.\n *\n * @example\n * ```tsx\n * import { useCounter } from \"@yeskunall/react-hooks\";\n *\n * function Pagination() {\n *   const { count: page, decrement, increment, reset } = useCounter(1);\n *\n *   return (\n *     <div>\n *       <button onClick={() => decrement()} disabled={page <= 1}>\n *         Prev\n *       </button>\n *       <span>Page {page}</span>\n *       <button onClick={() => increment()}>Next</button>\n *       <button onClick={reset}>Reset</button>\n *     </div>\n *   );\n * }\n * ```\n */\nexport function useCounter(initialValue: number = 0): UseCounterReturn {\n  const [count, setCount] = useState(initialValue)\n\n  const decrement = useCallback((delta = 1) => setCount(previous => previous - delta), [])\n  const increment = useCallback((delta = 1) => setCount(previous => previous + delta), [])\n  const reset = useCallback(() => setCount(initialValue), [initialValue])\n\n  return useMemo<UseCounterReturn>(\n    () => ({\n      count,\n      decrement,\n      increment,\n      reset,\n      set: setCount,\n    }),\n    [count, decrement, increment, reset],\n  )\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

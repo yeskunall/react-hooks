@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-timeout",
+  "type": "registry:hook",
+  "files": [
+    {
+      "path": "registry/hooks/use-timeout/index.ts",
+      "content": "import { useEffect, useRef } from \"react\"\n\n/**\n * Invoke a callback function after a specified delay.\n *\n * The latest version of the callback is always invoked, even if it changes between renders. If the delay changes, the previous timeout is cancelled and a new one is scheduled. If `delay` is `null` or `undefined`, the timeout is paused.\n *\n * @param `callback` - Function to call after the timeout\n * @param `delay` - Delay in milliseconds before invoking the callback. If `null` or `undefined`, the timeout is paused.\n *\n * @example\n * ```tsx\n * function Component() {\n *   const [count, setCount] = useState(0)\n *\n *   useTimeout(() => {\n *     console.log(\"Timeout fired! Count:\", count)\n *   }, 1000)\n *\n *   return (\n *     <button onClick={() => setCount(c => c + 1)}>\n *       Increment count\n *     </button>\n *   )\n * }\n * ```\n */\nexport function useTimeout(callback: () => void, delay: number | null | undefined) {\n  const ref = useRef(callback)\n  ref.current = callback\n\n  useEffect(() => {\n    if (delay === null || delay === undefined) return\n\n    const id = setTimeout(() => {\n      ref.current()\n    }, delay)\n\n    return () => clearTimeout(id)\n  }, [delay])\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}
