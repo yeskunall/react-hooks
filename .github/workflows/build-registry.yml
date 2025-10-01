@@ -1,0 +1,27 @@
+name: Build registry
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "registry/**"
+  push:
+    branches:
+      - main
+    paths:
+      - "registry/**"
+
+jobs:
+  build-registry:
+    name: Build registry
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run registry:build
