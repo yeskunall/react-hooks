@@ -1,0 +1,104 @@
+import type { Registry } from "./schema.js"
+
+export const hooks: Registry["items"] = [
+  {
+    name: "use-boolean",
+    type: "registry:hook",
+    files: [
+      {
+        type: "registry:hook",
+        path: "registry/hooks/use-boolean/index.ts",
+      },
+    ],
+  },
+  {
+    name: "use-click-anywhere",
+    type: "registry:hook",
+    files: [
+      {
+        type: "registry:hook",
+        path: "registry/hooks/use-click-anywhere/index.ts",
+      },
+    ],
+  },
+  {
+    name: "use-counter",
+    type: "registry:hook",
+    files: [
+      {
+        type: "registry:hook",
+        path: "registry/hooks/use-counter/index.ts",
+      },
+    ],
+  },
+  {
+    name: "use-cycle",
+    type: "registry:hook",
+    files: [
+      {
+        type: "registry:hook",
+        path: "registry/hooks/use-cycle/index.ts",
+      },
+    ],
+  },
+  {
+    name: "use-debounce",
+    type: "registry:hook",
+    files: [
+      {
+        type: "registry:hook",
+        path: "registry/hooks/use-debounce/index.ts",
+      },
+    ],
+  },
+  {
+    name: "use-default",
+    type: "registry:hook",
+    files: [
+      {
+        type: "registry:hook",
+        path: "registry/hooks/use-default/index.ts",
+      },
+    ],
+  },
+  {
+    name: "use-input-control",
+    type: "registry:hook",
+    files: [
+      {
+        type: "registry:hook",
+        path: "registry/hooks/use-input-control/index.ts",
+      },
+    ],
+  },
+  {
+    name: "use-media-query",
+    type: "registry:hook",
+    files: [
+      {
+        type: "registry:hook",
+        path: "registry/hooks/use-media-query/index.ts",
+      },
+    ],
+  },
+  {
+    name: "use-set",
+    type: "registry:hook",
+    files: [
+      {
+        type: "registry:hook",
+        path: "registry/hooks/use-set/index.ts",
+      },
+    ],
+  },
+  {
+    name: "use-timeout",
+    type: "registry:hook",
+    files: [
+      {
+        type: "registry:hook",
+        path: "registry/hooks/use-timeout/index.ts",
+      },
+    ],
+  },
+]

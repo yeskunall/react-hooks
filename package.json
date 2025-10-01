@@ -27,7 +27,7 @@
     "dev": "unbuild --stub",
     "lint": "eslint --max-warnings 0 .",
     "prepublishOnly": "pnpm run build",
-    "registry:build": "shadcn build --output apps/docs/public/r",
+    "registry:build": "tsx --tsconfig tsconfig.scripts.json ./scripts/build-registry.ts",
     "test": "vitest"
   },
   "devDependencies": {
@@ -55,10 +55,12 @@
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "shadcn": "2.9.3-canary.0",
+    "tsx": "4.20.6",
     "typescript": "5.9.2",
     "typescript-eslint": "8.44.0",
     "unbuild": "3.6.1",
-    "vitest": "3.2.4"
+    "vitest": "3.2.4",
+    "zod": "4.1.11"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

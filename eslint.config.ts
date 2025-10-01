@@ -37,6 +37,7 @@ export default defineConfig([
     ignores: [
       "**/dist/**",
       "node_modules/**",
+      "__registry__/index.tsx",
       "apps/docs/.next/**",
       "apps/docs/.source/**",
       "apps/docs/next-env.d.ts",

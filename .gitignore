@@ -16,10 +16,12 @@
 !pnpm-lock.yaml
 !pnpm-workspace.yaml
 !readme.md
-!registry.json
 !registry/
 !registry/**
+!scripts/
+!scripts/build-registry.ts
 !tsconfig.json
+!tsconfig.scripts.json
 !vitest.config.ts
 
 **/node_modules/**
