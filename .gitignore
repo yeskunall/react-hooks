@@ -2,6 +2,8 @@
 
 !.github/
 !.github/**
+!__registry__/
+!__registry__/**
 !apps/
 !apps/**
 !hooks/
